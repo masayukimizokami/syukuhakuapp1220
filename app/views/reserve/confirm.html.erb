@@ -20,7 +20,6 @@
 	<p>上記内容でよろしければ「予約を確定」を押してください</p>
 
 	<%= form_for @reserve, method: :post, url: reserve_complete_path(room_id:@room.id) do |form| %>
-		<%= form.hidden_field :reserve_date %>
 		<%= form.hidden_field :name %>
 		<%= form.hidden_field :note %>
 		<%= form.hidden_field :room_id, value: @room.id %>

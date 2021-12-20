@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_16_072759) do
+ActiveRecord::Schema.define(version: 2021_12_20_221703) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -46,11 +46,8 @@ ActiveRecord::Schema.define(version: 2021_12_16_072759) do
   end
 
   create_table "reserves", force: :cascade do |t|
-    t.string "reserve_date"
     t.string "name"
     t.string "note"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer "num_people"
@@ -58,6 +55,8 @@ ActiveRecord::Schema.define(version: 2021_12_16_072759) do
     t.integer "total_date"
     t.integer "room_id"
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -88,7 +87,7 @@ ActiveRecord::Schema.define(version: 2021_12_16_072759) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name"
-    t.string "image"
+    t.string "image_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "profile"
