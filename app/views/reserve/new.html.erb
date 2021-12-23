@@ -1,0 +1,28 @@
+<h1>予約フォーム</h1>
+
+<div class="room_show">
+<h3>こちら側にルームの詳細ページが入ります</h3>
+</div>
+
+<div class="reservation_new">
+	
+	<%= form_for @room, method: :get, url: reserve_confirm_path do |form| %>
+		<dl>
+			<dt>¥６０００/日<dt>
+			<dd><%= @room. room_price %></dd>
+		</dl>
+	<% end %>
+	<%= form_for @reserve, method: :post, url: reserve_confirm_path do |form| %>
+		<dl>
+			<dt>¥６０００/日<dt>
+			<dt>開始日</dt>
+			<dd><%= form.date_field :start_date %></dd>
+			<dt>終了日</dt>
+			<dd><%= form.date_field :end_date %></dd>
+			<dt>人数</dt>
+			<dd><%= form.number_field :num_people %></dd>
+		</dl>
+
+		<%= form.submit '確認画面へ' %>
+	<% end %>
+</div>
